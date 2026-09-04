@@ -1,0 +1,32 @@
+appId: tech.navase.globaltimematrix
+productName: Global Time Matrix
+copyright: © NavAse Technologies
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - dist/**/*
+  - electron/**/*
+  - package.json
+
+# Ship only the built web assets + the electron shell — no source, no
+# node_modules beyond what electron needs.
+asar: true
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  artifactName: GlobalTimeMatrix-Setup-${version}.${ext}
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Global Time Matrix
+  uninstallDisplayName: Global Time Matrix
+  runAfterFinish: true

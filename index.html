@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Global Time Matrix — every timezone you work across, at a glance. A free offline world-clock and anchor-based time converter from NavAse Technologies."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <title>Global Time Matrix</title>
+    <link rel="icon" href="./favicon.svg" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="2" />
+            <path d="M16 6v10l7 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <div>
+            <h1>Global Time Matrix</h1>
+            <p class="brand-sub">Every timezone you work across, at a glance</p>
+          </div>
+        </div>
+        <div class="home" id="homeClock"></div>
+      </header>
+
+      <section class="toolbar">
+        <div class="search" id="search"></div>
+        <div class="controls" id="controls"></div>
+      </section>
+
+      <main class="grid" id="grid" aria-live="polite"></main>
+
+      <section class="converter" id="converter"></section>
+
+      <footer class="foot">
+        <div class="disclosures" id="disclosures"></div>
+        <p class="colophon">
+          A free app from <strong>NavAse Technologies</strong>. Runs entirely on
+          your device — no accounts, no servers, no tracking.
+        </p>
+      </footer>
+    </div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+name: Build & release desktop app
+
+# Tag a commit `v1.2.3` and push it — this builds the Windows installer
+# and attaches it to a GitHub Release of the same name.
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build web bundle
+        run: npm run build
+
+      - name: Build Windows installer
+        run: npx electron-builder --win --publish never
+
+      - name: Publish to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            release/GlobalTimeMatrix-Setup-*.exe
+            release/latest.yml
+          draft: false
+          generate_release_notes: true
