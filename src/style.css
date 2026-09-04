@@ -770,6 +770,24 @@ select {
   }
 }
 
+/* ---------- watermark ---------- */
+.watermark {
+  position: fixed;
+  right: 12px;
+  bottom: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--faint) 70%, transparent);
+  pointer-events: none;
+  user-select: none;
+  z-index: 50;
+}
+.watermark strong {
+  font-weight: 700;
+  color: color-mix(in srgb, var(--muted) 80%, transparent);
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;

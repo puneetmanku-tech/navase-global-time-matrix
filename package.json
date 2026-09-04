@@ -1,7 +1,7 @@
 {
   "name": "global-time-matrix",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Global Time Matrix — every timezone you work across, at a glance. A NavAse Technologies free app.",
   "type": "module",
   "author": "NavAse Technologies",
